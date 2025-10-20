@@ -24,7 +24,7 @@ int main(){
 
     printf("El numero de tu Carta es : %d\n", carta);
     printf("La letra de tu Estado es : %s\n", estado);
-    printf("El Codigo de tu Carta es : %s0%d", estado, carta);
+    printf("El Codigo de tu Carta es : %s0%d\n", estado, carta);
     printf("El Nombre de la Ciudad es : %s\n", cidade);
     printf("La Poblacion de la Ciudad es : %d\n", populacao);
     printf("El valor del PIB es : %f\n", pib);
