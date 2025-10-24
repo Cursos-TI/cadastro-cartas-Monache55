@@ -1,11 +1,9 @@
 #include <stdio.h>
-#include <locale.h>
 
 int main() {
-    setlocale(LC_ALL, "");
-
+    
     int carta, populacao, polos;
-    float area, pib, densidade;
+    float area, pib, pibpercapita, densidade;
     char estado[50], cidade[50];
 
     printf("Digite el numero de su carta:  \n");
@@ -21,28 +19,31 @@ int main() {
     scanf("%d", &populacao);
 
     printf("Digita el valor del area de la ciudad:  \n");
-    scanf("%f", &area);
+    scanf(" %f", &area);
 
     printf("Digita el valor del PIB:  \n");
-    scanf("%f", &pib);
+    scanf(" %f", &pib);
 
     printf("Digita la cantidad de polos:  \n");
     scanf("%d", &polos);
 
-    if (area != 0)
-        densidade = populacao / area;
-    else
-        densidade = 0;
+    // Cálculos
+    densidade = (float)populacao / area;
+    pib = pib * 1000000000;       // convertir de miles de millones a reales
+    pibpercapita = pib / populacao;
 
-    printf("\n===== RESULTADOS =====\n");
-    printf("El numero de tu Carta es: %d\n", carta);
-    printf("La letra de tu Estado es: %s\n", estado);
-    printf("El Codigo de tu Carta es: %s%02d\n", estado, carta);
-    printf("El Nombre de la Ciudad es: %s\n", cidade);
-    printf("La Poblacion de la Ciudad es: %d\n", populacao);
-    printf("El valor del PIB es: %.2f\n", pib);
-    printf("La Cantidad de polos Turisticos es: %d\n", polos);
-    printf("La Densidad Poblacional es: %.2f\n", densidade);
+    // Resultados
+
+    printf("Carta: %d\n", carta);
+    printf("Estado: %s\n", estado);
+    printf("Código: %s%02d\n", estado, carta);
+    printf("Nome da Cidade: %s\n", cidade);
+    printf("População: %d\n", populacao);
+    printf("Área: %.2f\n", area);
+    printf("PIB: %.2f billones de reais\n", pib / 1000000000);
+    printf("Número de Pontos Turísticos: %d\n", polos);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade);
+    printf("PIB per Capita: %.2f reais\n", pibpercapita);
 
     return 0;
 }
