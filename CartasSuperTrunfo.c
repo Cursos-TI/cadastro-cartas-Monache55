@@ -6,30 +6,30 @@ int main() {
     float area, pib, pibpercapita, densidade;
     char estado[50], cidade[50];
 
-    printf("Digite el numero de su carta:  \n");
+    printf("Digite o numero da sua carta:  \n");
     scanf("%d", &carta);
 
-    printf("Digite la letra de su Estado:  \n");
+    printf("Digite a letra do seu Estado:  \n");
     scanf("%s", estado);
 
-    printf("Digite el nombre de la Ciudad:  \n");
+    printf("Digite o nome da sua Cidade:  \n");
     scanf(" %49[^\n]", cidade);
 
-    printf("Digite la Poblacion de la Ciudad:  \n");
+    printf("Digite a Populacao da sua Cidade:  \n");
     scanf("%d", &populacao);
 
-    printf("Digita el valor del area de la ciudad:  \n");
+    printf("Digita o valor da area da sua Cidade:  \n");
     scanf(" %f", &area);
 
-    printf("Digita el valor del PIB:  \n");
+    printf("Digita o valor do PIB:  \n");
     scanf(" %f", &pib);
 
-    printf("Digita la cantidad de polos:  \n");
+    printf("Digita a Cantidade de Polos:  \n");
     scanf("%d", &polos);
 
     // Cálculos
     densidade = (float)populacao / area;
-    pib = pib * 1000000000;       // convertir de miles de millones a reales
+    pib = pib * 1000000000;       // convertir miles de milhoes a reais
     pibpercapita = pib / populacao;
 
     // Resultados
@@ -40,7 +40,7 @@ int main() {
     printf("Nome da Cidade: %s\n", cidade);
     printf("População: %d\n", populacao);
     printf("Área: %.2f\n", area);
-    printf("PIB: %.2f billones de reais\n", pib / 1000000000);
+    printf("PIB: %.2f bilhões de reais\n", pib / 1000000000);
     printf("Número de Pontos Turísticos: %d\n", polos);
     printf("Densidade Populacional: %.2f hab/km²\n", densidade);
     printf("PIB per Capita: %.2f reais\n", pibpercapita);
